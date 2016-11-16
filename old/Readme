@@ -1,0 +1,40 @@
+11/4/16: New procedure for changing passwords:
+  ./change_passwords.bash 'old password' 'new password'
+This is much faster and cooler than the 11/3 procedure.
+
+After executing change_passwords.bash:
+   ./check_passwords.bash | more
+will show you the votebuilder passwords on each machine.
+====================================================
+
+11/3/16 Procedure for changing password:
+  1. ./close_all_firefox.pl
+  2. ./rewrite_all_passwords.pl 'old password' 'new password'
+  3. ./start_all_firefox.pl
+
+At any time, ./refresh_all.pl will refresh all the displays so you can
+see what's happening.
+================================
+Commands for maintaining the DVC cluster (Nov. 2016)
+
+super_shutdown.pl - shutdown all the laptops.  
+                    Should be run as dem.  That is, do not use sudo.
+                    There are no arguments.
+
+rewrite_all_passwords.pl 'old password' 'new password'
+
+                  - VERY IMPORTANT: the passwords MUST BE enclosed in
+                    single quotes.  It changes all the autofill passwords in 
+                    prefs.js from old to new.  It warns if there was
+                    more than exactly one match to 'old password' and 
+                    does nothing in that case.
+                    Should be run as dem.  That is, do not use sudo.
+                    There are no arguments.
+                   
+list_laptops.pl   - list all the laptops on the 103 subnet.  It shows the
+                    laptops it found and those that it didn't find.
+                    Should be run as dem.  That is, do not use sudo.
+                    There are no arguments.
+                    
+refresh_all.pl    - Send a space bar to every laptop.  The effect is
+                    to refresh the screen on every laptop.

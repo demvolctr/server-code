@@ -1,0 +1,40 @@
+Nov. 2016 Readme for ~dem/gitproject/server-code
+
+This directory contains various scripts that run on an assigned host, the "cluster master," (dvc-dell-57 in Nov. 2016) and are used for maintaining the network of clients.  The ssh credentials for this host are automatically installed on each client at startup, if they are not already present, by a script in the client-code tree.  The use of ssh allows these scripts to be applied without being prompted for a password by each host.  
+
+==========================================
+
+Commands for maintaining the DVC cluster (Nov. 2016)
+
+  ./change_passwords.bash 'old password' 'new password'
+This is much faster and cooler than the 11/3 procedure.
+
+- VERY IMPORTANT: the passwords MUST BE enclosed in
+single quotes.  It changes all the autofill passwords in 
+prefs.js from old to new.  It warns if there was
+more than exactly one match to 'old password' and 
+does nothing in that case.  Should be run as dem.  
+That is, do not use sudo.  There are no arguments.
+
+==================================================================
+
+   ./check_passwords.bash | more
+will show you the votebuilder passwords on each machine.
+                    
+==================================================================
+
+./parallel_refresh.bash - Send a space bar to every laptop.  The effect is
+                    to refresh the screen on every laptop.
+                   
+==================================================================
+
+./list_laptops.pl   - list all the laptops on the 103 subnet.  It shows the
+                    laptops it found and those that it didn't find.
+                    Should be run as dem.  That is, do not use sudo.
+                    There are no arguments.
+
+==================================================================
+
+./parallel_shutdown.bash   
+    Refresh the displays, close firefox, and shutdown all the Dell
+laptops on the 103 subnet.
