@@ -2,6 +2,9 @@ Nov. 2016 Readme for ~dem/gitproject/server-code
 
 This directory contains various scripts that run on an assigned host, the "cluster master," (dvc-dell-57 in Nov. 2016) and are used for maintaining the network of clients.  The ssh credentials for this host are automatically installed on each client at startup, if they are not already present, by a script in the client-code tree.  The use of ssh allows these scripts to be applied without being prompted for a password by each host.  
 
+Jon Hull
+11/15/16
+
 ==========================================
 
 Commands for maintaining the DVC cluster (Nov. 2016)
